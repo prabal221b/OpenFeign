@@ -6,7 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import java.util.List;
 
-@FeignClient(url="http://localhost:8081", value = "Product-Client")
+//@FeignClient(url="http://localhost:8081", value = "Product-Client")
+@FeignClient(name="PRODUCTSERVICE")
 public interface ProductClient {
     @GetMapping("/products/user/{userId}")
     public List<Product> getProductsByUser(@PathVariable long userId);
